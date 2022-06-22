@@ -20,7 +20,7 @@ export default function Grid() {
     
   },[])
   
-  // console.log(foodItem)
+  console.log(foodItem)
   
   return (
     <div className='grid-container'>
@@ -33,6 +33,7 @@ export default function Grid() {
             foodName={element.name}
             price={element.price}
             dsc={element.dsc}
+            shop={element.shop}
           />
         ))
       }

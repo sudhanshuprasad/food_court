@@ -5,13 +5,16 @@ import { useDispatch, useSelector } from 'react-redux';
 import "./css/CartItem.css";
 import { db } from "../firebaseConfig";
 import { collection, doc, getDoc, getDocs } from "firebase/firestore";
+import { actionCreaters } from "../state";
 
 export default function CartItem(props) {
 
     const [item, setItem] = useState();
 
-    const docRef = doc(db, "foods", props.id);
+    // const dispatch=useDispatch()
+    // dispatch(actionCreaters.inctotal(10))
 
+    const docRef = doc(db, "foods", props.id);
     const getFood = async () => {
         const docSnap = await getDoc(docRef);
         console.log(docSnap.data())
