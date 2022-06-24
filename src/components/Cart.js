@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import './css/Login.css';
 import './css/Cart.css';
 import CartItem from './CartItem';
-import { collection, doc, getDoc, getDocs, setDoc } from 'firebase/firestore';
+import { doc, getDoc, setDoc } from 'firebase/firestore';
 import { db } from '../firebaseConfig';
 import { useSelector } from 'react-redux';
 
@@ -64,7 +64,7 @@ export default function Cart() {
             <div className="cart_total">
                 <h3>Total: &#8377;{total}</h3>
             </div>
-            <div>
+            <div className='order_now'>
                 <button onClick={orderNow} className="cart_button">Order Now</button>
             </div>
         </div>

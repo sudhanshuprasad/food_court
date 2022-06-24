@@ -53,7 +53,8 @@ function NavigationBar() {
         const cartsColectionRef = collection(db, "orders");
         await setDoc(doc(cartsColectionRef, localStorage.getItem("uid")), {
             foodID: [],
-            quantity: []
+            quantity: [],
+            userName: localStorage.getItem("name")
         });
         console.log("order doc cteated");
     }

@@ -25,7 +25,7 @@ export default function Grid() {
   return (
     <div className='grid-container'>
       {
-        foodItem.map((element) => (
+        foodItem?.map((element) => (
           <Card
             key={element.id}
             num={element.id}

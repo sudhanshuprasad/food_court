@@ -1,18 +1,12 @@
 import React, { useEffect, useState } from "react";
 import PropTypes from 'prop-types';
-import { useDispatch, useSelector } from 'react-redux';
-// import { actionCreaters } from "../state/index";
 import "./css/CartItem.css";
 import { db } from "../firebaseConfig";
-import { collection, doc, getDoc, getDocs } from "firebase/firestore";
-import { actionCreaters } from "../state";
+import { doc, getDoc } from "firebase/firestore";
 
 export default function CartItem(props) {
 
     const [item, setItem] = useState();
-
-    // const dispatch=useDispatch()
-    // dispatch(actionCreaters.inctotal(10))
 
     const docRef = doc(db, "foods", props.id);
     const getFood = async () => {
@@ -50,9 +44,6 @@ export default function CartItem(props) {
                         <button onClick={decqnt}>-</button>
                         <h2>Quantity: {props.quantity} {/* quantity */}</h2>
                         <button onClick={incqnt}>+</button>
-                        {/* <button onClick={()=>{dispatch(actionCreaters.decqt(1, props.id))}}>-</button>
-                    <h2>Quantity: {props.quantity} and {quantity}</h2>
-                    <button onClick={()=>{dispatch(actionCreaters.incqt(1))}}>+</button> */}
                     </div>
                 </div>
             </div>
@@ -64,5 +55,5 @@ CartItem.propTypes = {
     quantity: PropTypes.number.isRequired,
 }
 CartItem.defaultProps = {
-    quantity: 0
+    quantity: 1
 }
